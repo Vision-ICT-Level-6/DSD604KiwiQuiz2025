@@ -40,10 +40,7 @@ function App() {
     // Log for debugging
     console.log("rand", rand);
     console.log("gameData Q= ", gameData.Q + " A= " + gameData.A);
-    console.log(
-      "gameDataLet Q= ",
-      gameDataForConsoleLogOnly.Q + " A= " + gameDataForConsoleLogOnly.A
-    );
+    console.log("gameDataLet Q= ", gameDataForConsoleLogOnly.Q + " A= " + gameDataForConsoleLogOnly.A);
   };
 
   // When the user selects an answer from the dropdown
@@ -52,14 +49,7 @@ function App() {
     answerLet = e.value; // Store the answer in a variable
     setWinlose("- you " + winLoseCalc(answerLet)); // Set win/lose message
     // Log for debugging
-    console.log(
-      "answer = ",
-      answerLet +
-        "  gameplay = " +
-        gameData.A +
-        "  gameDataLet.A = " +
-        gameDataLet.A
-    );
+    console.log("answer = ", answerLet + "  gameplay = " + gameData.A);
   };
 
   // Function to check if the answer is correct
@@ -82,18 +72,13 @@ function App() {
           <div className="card shadow">
             <div className="card-body">
               {/* Button to get a new random question */}
-              <button
-                className="btn btn-primary mb-4 w-100 display-4"
-                onClick={onClickHandlerNewGame}
-              >
+              <button className="btn btn-primary mb-4 w-100 display-4" onClick={onClickHandlerNewGame}>
                 Choose a Random Question
               </button>
               {/* Show the question and result */}
               <div className="mb-4 text-center">
                 <h2 className="display-4">{gameData.Q}</h2>
-                <h4 className="fs-3 mt-3">
-                  {answer ? "You selected " + answer + winlose : ""}
-                </h4>
+                <h4 className="fs-3 mt-3">{answer ? "You selected " + answer + winlose : ""}</h4>
               </div>
               {/* Dropdown for selecting an answer */}
               <div>
